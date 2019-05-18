@@ -117,6 +117,7 @@ int main() {
           bool is_left = false;
           bool is_right = false;
 
+          // tag other cars for lane change or not
           for (int i = 0; i < sensor_fusion.size(); i++){
             float d = sensor_fusion[i][6];
             
@@ -128,10 +129,6 @@ int main() {
             } else if (d > 8 && d < 12){
               car_lane = 2;
             }
-
-            // if (car_lane < 0){
-            //   continue;
-            // }
 
             double vx = sensor_fusion[i][3];
             double vy = sensor_fusion[i][4];
@@ -152,6 +149,7 @@ int main() {
             }
           }
 
+          // action based on car status
           double change_vel= 0;
           if ( is_ahead ) { // Car ahead
             if ( !is_left && lane > 0 ) {
