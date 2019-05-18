@@ -85,21 +85,21 @@ The simulation was run for a distance of 5 miles without any incidents. The enti
 
 ![][final_image]
 
-#### Reflection
+### Reflection
 
 Most of the code required for running the project was already provided as part of the code repo. The real meat of the path planning algorithm can be found in [lines 102 to 285](./src/main.cpp#L102) of ```main.cpp```. This section deals with a few different key aspects
 
-##### Understanding the Environment
+#### Understanding the Environment
 
 This section deals with trying to ascertain the environment around the car using sensor fusion data. Is there a slow moving car ahead of us in our lane? If so, are there cars in our neighboring lanes hindering a lane change. This will be used to determine whether a lane change is necessary/feasible. For this purpose, we tag every other car as *dangerous* or not by ascertaining which lane they are in and the position it will be at the end of our car's planned trajectory. This section of the code can be found in [lines 116 - 153](./src/main.cpp#L116)
 
-##### Lane Change Action
+#### Lane Change Action
 
 Now that we have the necessary information to decide whether to change lanes or not, the section in [lines 155 - 176](./src/main.cpp#L155) executes the action. Depending on the previous section, this could mean: execute a lane change, slow down or speed up (if it has switched lanes after a slow down). This differential is captured in the ```change_vel``` variable.
 
 ![][lane_change]
 
-##### Trajectory planning
+#### Trajectory planning
 
 The rest of the code ([lines 177 - 285](./src/main.cpp#L177)) deals the with the generation of the trajectory for the car to follow. This obviously then takes information from the previous two sections to ensure a smooth and effective plan.
 
