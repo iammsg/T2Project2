@@ -3,9 +3,9 @@
 This project is the second projecty in the Self-Driving Car Engineer Nanodegree Program. 
 
 [//]: # (Image References)
-[startup]: ./imgs/statup.png
-[lane_change]: ./imgs/lane_change.png
-[final_image]: ./imgs/final.png
+[startup]: ./imgs/statup-1.png
+[lane_change]: ./imgs/lane_change-1.png
+[final_image]: ./imgs/final-1.png
 
 ### Goals
 
